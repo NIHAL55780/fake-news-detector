@@ -7,13 +7,13 @@ import os
 nltk.download('stopwords')  #downloading the stopwords from nltk
 
 def clean_text(text): #cleaning of the text take place here
-    text = text.lower()
-    text = re.sub(r'[^a-zA-Z\s]','',text)   #removing special characters and numbers
+    text = str(text).lower()
+    text = re.sub(r'[^a-zA-Z\s]', ' ', text)   #removing special characters and numbers
     text = text.strip() #remove the spaces from front and back
     stop_words=set(stopwords.words('english')) #load the stopwords
     words= text.split() #split the text into words
     words=[word for word in words if word not in stop_words]   #removing the stopwords from the text
-    return "".join(words)
+    return " ".join(words)
 
 def preprocess_data():
     path=os.path.join("data","processed","combined.csv")
