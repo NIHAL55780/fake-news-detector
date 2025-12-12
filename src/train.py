@@ -1,3 +1,6 @@
+#it trains the machine learning model using the processed data
+
+
 import pandas as pd
 from sklearn.model_selection import train_test_split #is used to divide the dataset into training and testing sets
 from sklearn.feature_extraction.text import TfidfVectorizer #used to convert text data into numerical format
@@ -25,9 +28,11 @@ def train_model():
     model.fit(X_train_tfidf,y_train) #we are training the model with the training data
     y_pred=model.predict(X_test_tfidf) #predicting the label (0 or 1) for the test data
     accuracy = accuracy_score(y_test,y_pred) #calculating the accuracy of the model
+   
     print(f"Model Accuracy:{accuracy:.2f}")
     print("\nClassification Report:")
     print(classification_report(y_test, y_pred))
+    
     model_path = os.path.join("models","fake_news_model.pkl") #path to save the trained model and vectorizer for future use
     
     vectorizer_path = os.path.join("models","tfidf_vectorizer.pkl")

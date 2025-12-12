@@ -1,3 +1,9 @@
+#it preprocesses the raw data by cleaning the text and removing stopwords
+
+
+
+
+
 import pandas as pd
 import re   #importing regular expression library for text cleaning
 import nltk #importing natural language toolkit for text processing

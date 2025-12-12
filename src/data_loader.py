@@ -1,3 +1,6 @@
+#it loads the raw data from CSV files, combines them, and saves the processed data
+
+
 import pandas as pd #library that helps to read the CSV file
 import os
 
@@ -18,5 +21,5 @@ def load_data():
     print("dataset has been loaded and combined successfully")
     print(f"saved to {processed_path}")
     
-if __name__=="__main__":
+if __name__=="__main__": #should be outside the function
     load_data()
